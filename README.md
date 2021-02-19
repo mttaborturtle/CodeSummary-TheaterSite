@@ -191,9 +191,9 @@ Below is the HTML and Razor that I used to disable the button if the user was lo
 *Jump to: [List Of Stories](#Stories), [Page Top](#Live-Project)*
 
 ## Other Skills Learned
-* Working with a group of developers to identify bugs and make the application mure usable.
+* Working with a group of developers to identify bugs and make the application more usable.
 * Daily meetings to talk about the challenges of the day and to communicate any roadblocks.
-* Learning new skils while writing code I was unfamiliar with. Completing the research needed in order to complete a task.
+* Learning new skills while writing code I was unfamiliar with. Completing the research needed in order to complete a task.
 * Great practice being part of a team, and completing team programming when one developer has an issue they can not resolve.
 * Becoming comfortable with the DevOps/Scrum working environment. 
 * Becoming familiar using a story board. Checking out stories and submitting them when resolved.

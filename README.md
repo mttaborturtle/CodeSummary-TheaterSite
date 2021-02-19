@@ -14,6 +14,7 @@ Below are descriptions of the stories I worked on, along with code snippets to e
 ## Stories:
 * [Sign In Page Styling](#Sign-In-Page-Styling)
 * [Easy Login On Admin Navbar](#Easy-Login-On-Admin-Navbar)
+* [Subscription Plan Bug Fix](#Subscription-Plan-Bug-Fix)
 
 ## Sign In Page Styling
 In this story I took an existing basic and non-styled page and made it into a beautifully designed and visual appealing page. The names are added by students

@@ -10,6 +10,8 @@ Everyone on the team had the chance to work on stories in both front/back-end of
 of difficulty, and I am the most proud of that work. I'm confident I will use the skills I learned that are featured here for many years to come.
 
 Below are descriptions of the stories I worked on, along with code snippets to explore.
+##Stories:
+[Sign In Page Styling](#Sign-In-Page-Styling)
 
 ## Sign In Page Styling
 In this story I took an existing basic and non-styled page and made it into a beautifully designed and visual appealing page. The names are added by students
@@ -93,6 +95,69 @@ The following is the CSS styling I created for the page. This code was inserted 
         border-radius: 22px;
     }
 
+## Easy Login On Admin Navbar
+This story required me to create buttons on the Admin Navbar for developers to click for automatic login. I wrote Javascript to add the appropriate user and 
+password fields of a hidden form, depending on which user they wanted to emulate. I created a hidden form that would automatically log a developer in when 
+the button was clicked. I created and styled the buttons to the specifications that the client requested. What made this a somewhat difficult story is that the 
+Popout Admin Navbar neede to be functional on the actual user login page which also used an Easy login button system. I had to create a seperate login system 
+that wouldn't interfere with the Login page and create console errors. It took me a day of research to accomplish this task.
 
+Below is the HTML and Razor that I used to create the hidden form and buttons:
 
- [back end stories](#back-end-stories) [front end stories](#front-end-stories)  [skills](#other-skills-learned) 
+    @*Easy Login Button Form - for development purposes only. THIS MUST BE REMOVED BEFORE DEPLOYMENT*@
+        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = this.Request.RawUrl }, FormMethod.Post, new { role = "form", id = "Easylogin" })) // Added id="loginto be used with EasyLogin Buttons --!!! PLEASE REMOVE BEFORE DEPLOYMENT !!!
+        {
+            @Html.AntiForgeryToken()
+            @Html.Hidden("Email", "", new { id = "EasyEmail"})
+            @Html.Hidden("Password", "", new { id = "EasyPassword" })
+        }
+
+        <div class="admin_navbar_menu">
+            @*Easy Login Buttons - for development purposes only. THIS MUST BE REMOVED BEFORE DEPLOYMENT*@
+            <div class="text-center">
+                <h4 class="mb-1">Login As...</h4>
+                <p class="mb-0">
+                    <input type="button" class="iconBtn" value="Admin" id="EasyAdminBtn" />
+                    <input type="button" class="iconBtn" value="Subscriber" id="EasySubscriberBtn" />
+                </p>
+                <p class="mb-0">
+                    <input type="button" class="iconBtn" value="User" id="EasyUserBtn" />
+                    <input type="button" class="iconBtn" value="Cast Member" id="EasyMemberBtn" />
+                </p>
+            </div>
+
+The following is the JavaScript used to auto-complete the hidden form:
+
+    @*The JavaScript applies only to the Easy Login buttons, for the purposes of development. IT MUST BE REMOVED BEFORE DEPLOYMENT*@
+        <script type="text/javascript">
+            document.getElementById("EasyUserBtn").addEventListener('click', function () {
+                var email = document.getElementById('EasyEmail');
+                email.value = 'wubbalubbbadubdub@gmail.com';
+                var pass = document.getElementById('EasyPassword');
+                pass.value = '!Squanchie12';
+                document.getElementById("Easylogin").submit();
+            });
+            document.getElementById("EasyAdminBtn").addEventListener('click', function () {
+                var email = document.getElementById('EasyEmail');
+                email.value = 'test@gmail.com';
+                var pass = document.getElementById('EasyPassword');
+                pass.value = 'Passw0rd!';
+                document.getElementById("Easylogin").submit();
+            });
+            document.getElementById("EasyMemberBtn").addEventListener('click', function () {
+                var email = document.getElementById('EasyEmail');
+                email.value = 'member.test@gmail.com';
+                var pass = document.getElementById('EasyPassword');
+                pass.value = 'Ih@ve12cats';
+                document.getElementById("Easylogin").submit();
+            });
+            document.getElementById("EasySubscriberBtn").addEventListener('click', function () {
+                var email = document.getElementById('EasyEmail');
+                email.value = 'subscriber.test@gmail.com';
+                var pass = document.getElementById('EasyPassword');
+                pass.value = '100100St!';
+                document.getElementById("Easylogin").submit();
+            });
+        </script>
+        @*END Easy Login Buttons Javascript*@
+    @*}*@

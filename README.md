@@ -134,32 +134,50 @@ The following is the JavaScript used to auto-complete the hidden form:
         <script type="text/javascript">
             document.getElementById("EasyUserBtn").addEventListener('click', function () {
                 var email = document.getElementById('EasyEmail');
-                email.value = 'wubbalubbbadubdub@gmail.com';
+                email.value = 'Userb@gmail.com';
                 var pass = document.getElementById('EasyPassword');
-                pass.value = '!Squanchie12';
+                pass.value = '!ie12';
                 document.getElementById("Easylogin").submit();
             });
             document.getElementById("EasyAdminBtn").addEventListener('click', function () {
                 var email = document.getElementById('EasyEmail');
-                email.value = 'test@gmail.com';
+                email.value = 'tester@gmail.com';
                 var pass = document.getElementById('EasyPassword');
-                pass.value = 'Passw0rd!';
+                pass.value = 'Pass!';
                 document.getElementById("Easylogin").submit();
             });
             document.getElementById("EasyMemberBtn").addEventListener('click', function () {
                 var email = document.getElementById('EasyEmail');
-                email.value = 'member.test@gmail.com';
+                email.value = 'mem.test@gmail.com';
                 var pass = document.getElementById('EasyPassword');
-                pass.value = 'Ih@ve12cats';
+                pass.value = 'Ihcats';
                 document.getElementById("Easylogin").submit();
             });
             document.getElementById("EasySubscriberBtn").addEventListener('click', function () {
                 var email = document.getElementById('EasyEmail');
-                email.value = 'subscriber.test@gmail.com';
+                email.value = 'subscriber@gmail.com';
                 var pass = document.getElementById('EasyPassword');
-                pass.value = '100100St!';
+                pass.value = '1001!';
                 document.getElementById("Easylogin").submit();
             });
         </script>
         @*END Easy Login Buttons Javascript*@
     @*}*@
+
+## Subscription Plan Bug Fix
+This story required me to fix a bug on the Admin Dashboard page. The update subscription button would throw an error if clicked because if you are logged in 
+as an admin then you are not a subscriber. I was tasked to write code that would disable the button if the user is logged in as an Admin. I accomplished this 
+with a bit of Razor and HTML. This was the first story I worked on in the sprint. It was a great initial experience to get me up to speed with the MVC framework.
+
+Below is the HTML and Razor that I used to disable the button if the user was logged in as Admin:
+
+     @if (User.IsInRole("Admin"))
+                    {
+                        <button type="submit" class="subsave" id="subsave" disabled>Update Subscription</button>
+                    }
+                    else
+                    {
+                        <button type="submit" class="subsave" id="subsave">Update Subscription</button>
+                    }
+
+

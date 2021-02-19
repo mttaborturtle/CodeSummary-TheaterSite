@@ -13,6 +13,7 @@ Below are descriptions of the stories I worked on, along with code snippets to e
 
 ## Stories:
 * [Sign In Page Styling](#Sign-In-Page-Styling)
+* [Easy Login On Admin Navbar] (#Easy-Login-On-Admin-Navbar)
 
 ## Sign In Page Styling
 In this story I took an existing basic and non-styled page and made it into a beautifully designed and visual appealing page. The names are added by students
@@ -101,7 +102,7 @@ This story required me to create buttons on the Admin Navbar for developers to c
 password fields of a hidden form, depending on which type of user they wanted to emulate. I created a hidden form that would automatically log a developer in when 
 the button was clicked. I created and styled the buttons to the specifications that the client requested. What made this a somewhat difficult story is that the 
 Popout Admin Navbar neede to be functional on the actual user login page which also used an Easy login button system. I had to create a seperate login system 
-that wouldn't interfere with the Login page and create console errors. It took me a day of research to accomplish this task.
+that wouldn't interfere with the Login page and create console errors.
 
 Below is the HTML and Razor that I used to create the hidden form and buttons:
 
